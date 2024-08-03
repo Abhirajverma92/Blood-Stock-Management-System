@@ -1,6 +1,0 @@
-@BSMS_HostAddress = http://localhost:5219
-
-GET {{BSMS_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
