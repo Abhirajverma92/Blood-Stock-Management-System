@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import pic from '../img/Login.jpeg'
 
 function Form() {
   const [uid, setUid] = useState("");
@@ -21,7 +22,20 @@ function Form() {
   };
 
   return (
-    <div className="container-fluid min-vh-100 d-flex justify-content-center align-items-center bg-light">
+    <div className="container-fluid min-vh-100 d-flex justify-content-center align-items-center bg-light"
+    style={{ 
+      backgroundImage: `url(${pic})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '100vh',
+      padding: '20px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+      position: 'relative',
+      color: '#000'
+  }}>
       <div className="card p-4" style={{ maxWidth: "400px" }}>
         <h1 className="text-center">Login Form</h1>
         <form>

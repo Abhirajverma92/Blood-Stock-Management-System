@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-
+import pic from '../img/BloodbankImg.jpg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const HospitalRegistration = () => {
+const BloodBankRegistration = () => {
     const [formData, setFormData] = useState({
-        BID: '',
-        Bname: '',
-        Email: '',
-        ContactDetails: '',
-        Location: '',
-        LicenseNumber: '',
-        Password: '',
+        bankName: '',
+        password: '',
+        email: '',
+        contactNumber: '',
+        address: '',
+        licenseNumber: ''
     });
 
     const handleChange = (e) => {
@@ -27,89 +26,131 @@ const HospitalRegistration = () => {
     };
 
     return (
-        <div className="blood-registration">
-            <div className="background-image"></div>
+        <div 
+            className="blood-bank-registration"
+            style={{ 
+                backgroundImage: `url(${pic})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                minHeight: '100vh',
+                padding: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+                position: 'relative',
+                color: '#000'
+            }}
+        >
+            <div
+                style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.6)', 
+                    zIndex: 1
+                }}
+            ></div>
+            
+            <div 
+                className="form-container container  p-4 rounded shadow-lg"
+                style={{ 
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)', 
+                    width: '100%',
+                    maxWidth: '600px',
+                    zIndex: 2,
+                    position: 'relative'
+                }}>
 
-            <div className="form-container container  p-4 rounded shadow-lg">
-                <h2 className="mb-4">Blood Bank Registration</h2>
+                <h2 
+                    className="mb-4 mt-5 text-center"
+                    style={{
+                        zIndex: 2,
+                        color: '#000'
+                    }}
+                >
+                    Blood Bank Registration
+                </h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label htmlFor="Bname" className="form-label">Bank Name:</label>
+                        <label htmlFor="bankName" className="form-label">Bank Name:</label>
                         <input
                             type="text"
-                            id="Bname"
-                            name="Bname"
+                            id="bankName"
+                            name="bankName"
                             className="form-control"
-                            value={formData.Bname}
+                            value={formData.bankName}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="Password" className="form-label">Password:</label>
+                        <label htmlFor="password" className="form-label">Password:</label>
                         <input
-                            type="text"
-                            id="Password"
-                            name="Password"
+                            type="password"
+                            id="password"
+                            name="password"
                             className="form-control"
-                            value={formData.Password}
+                            value={formData.password}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="Email" className="form-label">Email:</label>
+                        <label htmlFor="email" className="form-label">Email:</label>
                         <input
                             type="email"
-                            id="Email"
-                            name="Email"
+                            id="email"
+                            name="email"
                             className="form-control"
-                            value={formData.Email}
+                            value={formData.email}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="ContactDetails" className="form-label">Contact Number:</label>
+                        <label htmlFor="contactNumber" className="form-label">Contact Number:</label>
                         <input
-                            type="text"
-                            id="ContactDetails"
-                            name="ContactDetails"
+                            type="tel"
+                            id="contactNumber"
+                            name="contactNumber"
                             className="form-control"
-                            value={formData.ContactDetails}
+                            value={formData.contactNumber}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="Location" className="form-label">Address:</label>
+                        <label htmlFor="address" className="form-label">Address:</label>
                         <input
                             type="text"
-                            id="Location"
-                            name="Location"
+                            id="address"
+                            name="address"
                             className="form-control"
-                            value={formData.Location}
+                            value={formData.address}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="LicenseNumber" className="form-label">License Number:</label>
+                        <label htmlFor="licenseNumber" className="form-label">License Number:</label>
                         <input
                             type="text"
-                            id="LicenseNumber"
-                            name="LicenseNumber"
+                            id="licenseNumber"
+                            name="licenseNumber"
                             className="form-control"
-                            value={formData.LicenseNumber}
+                            value={formData.licenseNumber}
                             onChange={handleChange}
                             required
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary">Register</button>
+                    <button type="submit" className="btn btn-primary w-100">Register</button>
                 </form>
             </div>
         </div>
     );
 };
 
-export default HospitalRegistration;
+export default BloodBankRegistration;
