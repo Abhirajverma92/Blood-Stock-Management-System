@@ -25,10 +25,12 @@ export default function NavigationBar() {
        
     };
 
-    // useEffect(()=> {fetch("http://localhost:7066/api/Login")
+    // useEffect(()=> {fetch('https://localhost:7066/api/Users/saveUser')
     //     .then(resp => resp.json())
     //     .then(login => login(login))
     //   },[]);
+
+
 
     return (
         <div>
