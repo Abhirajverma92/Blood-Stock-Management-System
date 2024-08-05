@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<BSMS.Models.Donor>
+<h1>Create Donor</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Dname"></label>
+        <input asp-for="Dname" />
+        <span asp-validation-for="Dname"></span>
+    </div>
+    <div>
+        <label asp-for="Adharno"></label>
+        <input asp-for="Adharno" />
+        <span asp-validation-for="Adharno"></span>
+    </div>
+    <!-- Add other form fields here -->
+    <div>
+        <label asp-for="BloodproductId"></label>
+        <select asp-for="BloodproductId" asp-items="ViewBag.BloodProducts"></select>
+        <span asp-validation-for="BloodproductId"></span>
+    </div>
+    <button type="submit">Submit</button>
+</form>
